@@ -4,9 +4,8 @@ from tkinter import messagebox
 root = Tk()
 root.title('Simple Calculator')
 
-e = Entry(root, width=35, borderwidth=5)
-e.grid(row=0, column=0, columnspan=4, padx=10, pady=30)
-# e.insert(0, 'enter number')
+e = Entry(root, width=45, borderwidth=10)
+e.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
 
 
 signs = ('+', '*', '/')
@@ -28,10 +27,12 @@ def calc_click(char):
 def calc_clear():
     e.delete(0, END)
 
+
 def calc_del():
     val = e.get()
     calc_clear()
     e.insert(0, val[0:-1])
+
 
 def calc():
     if e.get() != '':
@@ -64,15 +65,15 @@ btn_9 = Button(root, text='9', padx=40, pady=20, fg='white', bg='gray',  command
 btn_0 = Button(root, text='0', padx=40, pady=20, fg='white', bg='gray',  command=lambda: calc_click(0))
 btn_dot = Button(root, text='.', padx=42, pady=20, fg='white', bg='gray',  command=lambda: calc_click('.'))
 
-btn_add_sign = Button(root, text='+', padx=45, pady=52, fg='black', bg='lightgreen', command=lambda: calc_click('+'))
-btn_subtract_sign = Button(root, text='─', padx=42, pady=20, fg='black', bg='lightgreen', command=lambda: calc_click('-'))
-btn_multiply_sign = Button(root, text='*', padx=41, pady=10, fg='black', bg='lightgreen', command=lambda: calc_click('*'))
-btn_devide_sign = Button(root, text='/', padx=41, pady=10, fg='black', bg='lightgreen', command=lambda: calc_click('/'))
+btn_add_sign = Button(root, text='+', padx=45, pady=52, fg='black', bg='lightblue', command=lambda: calc_click('+'))
+btn_subtract_sign = Button(root, text='─', padx=42, pady=20, fg='black', bg='lightblue', command=lambda: calc_click('-'))
+btn_multiply_sign = Button(root, text='*', padx=41, pady=10, fg='black', bg='lightblue', command=lambda: calc_click('*'))
+btn_devide_sign = Button(root, text='/', padx=41, pady=10, fg='black', bg='lightblue', command=lambda: calc_click('/'))
 
-btn_equal_sign = Button(root, text='=', padx=91, pady=20, bg='lightblue', command=calc)
+btn_equal_sign = Button(root, text='=', padx=91, pady=20, bg='lightgreen', command=calc)
 
-btn_clear = Button(root, text='Clear', padx=30, pady=10, fg='black', bg='lightgreen', command=calc_clear)
-btn_del = Button(root, text='del', padx=40, pady=10, fg='black', bg='lightgreen', command=calc_del)
+btn_clear = Button(root, text='Clear', padx=30, pady=10, fg='black', bg='lightblue', command=calc_clear)
+btn_del = Button(root, text='del', padx=40, pady=10, fg='black', bg='lightblue', command=calc_del)
 
 
 btn_1.grid(row=4,column=0)
